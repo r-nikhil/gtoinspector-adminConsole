@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+<ul>
+  {% if database == 'plo4' %}
+  {% for user in users %}
+  <li>
+    <a href="{{url_for('plo4_blueprint.user_info', username=user)}}"
+      >{{user}}</a
+    >
+  </li>
+  {% endfor %}
+  {% else %}
+  {% for user in users %}
+  <li>
+    <a href="{{url_for('plo5_blueprint.plo5_user_info', username=user)}}"
+      >{{user}}</a
+    >
+  </li>
+  {% endfor %}
+  {% endif %}
+</ul>
+{% endblock %}

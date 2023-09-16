@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% block content %}
+<form method="POST" action="/usersearch/">
+  <div class="row">
+    <h1 class="my-auto">Search</h1>
+  </div>
+  <div class="row my-auto">
+    <input
+      class="my-auto col-lg-12 col-xl-12"
+      type="text"
+      name="search_text"
+      placeholder="Enter username or API Key (or keep empty to list all)"
+      size="100"
+      tabindex="1"
+    />
+  </div>
+  <br />
+  <div class="row">
+    <div class="my-auto col-md-6 col-lg-6 col-xl-6">
+      <label for="database">Choose a service:</label>
+      <select name="database" id="database">
+        <option value="plo4" selected="selected">PLO 4</option>
+        <option value="plo5">PLO 5</option>
+      </select>
+    </div>
+    <div class="my-auto col-md-6 col-lg-6 col-xl-6">
+      <label for="name_or_key">Search by:</label>
+      <select name="name_or_key" id="name_or_key">
+        <option value="name" selected="selected">Name</option>
+        <option value="apikey">API Key</option>
+      </select>
+    </div>
+    <br />
+  </div>
+  <div>
+    <br />
+  </div>
+  <div class="row my-auto">
+    <input
+      class="my-auto col-lg-12 col-xl-12 btn btn-success"
+      type="submit"
+      name="search"
+      value="Search"
+      tabindex="2"
+    />
+  </div>
+</form>
+{% endblock %}
